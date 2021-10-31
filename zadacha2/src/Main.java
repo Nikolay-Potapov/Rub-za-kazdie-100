@@ -1,21 +1,19 @@
 public class Main {
-    public static void main(String[] args) {
-        // начальный баланс
-        int balanceOnThePhone = 500;
-        // сумма пополнения
-        int replenishmentAmount = 1100;
-        // колличество бонусных рублей
-        int bonusScore = replenishmentAmount / 100;
-        // итоговая сумма с бонусами
-        int totalBonus = balanceOnThePhone + replenishmentAmount + bonusScore;
-        // итогова сумма без бонусов
-        int total = balanceOnThePhone + replenishmentAmount;
 
-        if (replenishmentAmount > 1000 || replenishmentAmount == 1000) {
-            System.out.println("Итоговый баланс с бонусом = " + totalBonus);
+    public static void main(String[] args) {
+        int balanceOnThePhone = 100;
+        int replenishmentAmount = 1200;
+        boolean amountBonus = replenishmentAmount > 1000;
+        int score;
+
+        if (amountBonus) {
+            score = replenishmentAmount / 100;
         } else {
-            System.out.println("Итоговый баланс = " + total);
+            score = 0;
         }
+
+        int total = score + balanceOnThePhone + replenishmentAmount;
+        System.out.println(total);
     }
 }
 
